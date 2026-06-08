@@ -1,0 +1,1 @@
+UPDATE public.tiktok_pixels SET pixel_id = 'D81LIPRC77UDUGTVEVMG' WHERE id = 'a45a70fe-3f48-4f5e-a7f0-f47168beda01';

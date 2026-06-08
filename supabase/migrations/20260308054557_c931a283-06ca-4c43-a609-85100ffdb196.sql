@@ -1,0 +1,1 @@
+ALTER TABLE public.orders ADD COLUMN product_type text NOT NULL DEFAULT 'mesa';

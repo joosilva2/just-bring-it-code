@@ -1,0 +1,1 @@
+UPDATE gateway_config SET active_gateway = 'duttyfy' WHERE id = 'active';

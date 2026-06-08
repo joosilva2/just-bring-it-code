@@ -1,0 +1,1 @@
+ALTER TABLE public.gateway_config ADD COLUMN duttyfy_api_url text DEFAULT NULL;
