@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>/</loc></url>
+  <url><loc>/admin</loc></url>
+  <url><loc>/admin1</loc></url>
+  <url><loc>/admincheckout</loc></url>
+  <url><loc>/admurl</loc></url>
+  <url><loc>/bmtt</loc></url>
+  <url><loc>/checkout</loc></url>
+  <url><loc>/contato</loc></url>
+  <url><loc>/creme</loc></url>
+  <url><loc>/envioup</loc></url>
+  <url><loc>/gateway</loc></url>
+  <url><loc>/nfe</loc></url>
+  <url><loc>/obrigado</loc></url>
+  <url><loc>/pix</loc></url>
+  <url><loc>/politica-de-privacidade</loc></url>
+  <url><loc>/politica-envio</loc></url>
+  <url><loc>/produto/:slug</loc></url>
+  <url><loc>/resultados</loc></url>
+  <url><loc>/taxa</loc></url>
+  <url><loc>/termos-de-uso</loc></url>
+  <url><loc>/trocas-e-devolucoes</loc></url>
+</urlset>
