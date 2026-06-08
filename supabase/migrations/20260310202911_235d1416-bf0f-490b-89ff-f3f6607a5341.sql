@@ -1,0 +1,1 @@
+UPDATE orders SET utmify_paid_sent = true WHERE status = 'paid' AND utmify_paid_sent = false AND created_at < '2026-03-06T00:00:00Z'

@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /admin1
+Disallow: /admincheckout
+Disallow: /admurl
+Disallow: /resultados
+Disallow: /bmtt
+Disallow: /gateway
+Disallow: /pix
+Disallow: /envioup
+Disallow: /nfe
+Disallow: /taxa
+Disallow: /obrigado
+Disallow: /checkout

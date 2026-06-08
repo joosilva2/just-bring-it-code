@@ -1,0 +1,1 @@
+UPDATE public.orders SET tiktok_paid_sent = false WHERE external_ref IN ('ORDER-1777383343635','ORDER-1777382625073');

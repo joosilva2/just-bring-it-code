@@ -1,0 +1,1 @@
+ALTER TABLE public.tiktok_pixels ADD COLUMN access_token_env text NOT NULL DEFAULT 'TIKTOK_ACCESS_TOKEN';

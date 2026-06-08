@@ -1,0 +1,1 @@
+UPDATE public.orders SET status='paid', paid_at=COALESCE(paid_at, now()), tiktok_paid_sent=false WHERE external_ref='ORDER-1777489518579';

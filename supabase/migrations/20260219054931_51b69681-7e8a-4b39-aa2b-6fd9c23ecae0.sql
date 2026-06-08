@@ -1,0 +1,1 @@
+ALTER TABLE public.gateway_config ADD COLUMN redirect_url TEXT DEFAULT NULL;

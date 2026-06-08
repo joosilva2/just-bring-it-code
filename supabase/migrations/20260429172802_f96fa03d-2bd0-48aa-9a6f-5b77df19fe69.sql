@@ -1,0 +1,2 @@
+ALTER TABLE public.checkout_events ADD COLUMN IF NOT EXISTS tiktok_ic_sent boolean NOT NULL DEFAULT false;
+CREATE INDEX IF NOT EXISTS idx_checkout_events_ic_resend ON public.checkout_events (event_type, tiktok_ic_sent, created_at);

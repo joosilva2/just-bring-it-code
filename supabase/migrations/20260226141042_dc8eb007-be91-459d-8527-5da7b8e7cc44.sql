@@ -1,0 +1,4 @@
+
+ALTER TABLE public.gateway_config
+ADD COLUMN IF NOT EXISTS buckpay_api_key TEXT DEFAULT NULL,
+ADD COLUMN IF NOT EXISTS buckpay_user_agent TEXT DEFAULT NULL;

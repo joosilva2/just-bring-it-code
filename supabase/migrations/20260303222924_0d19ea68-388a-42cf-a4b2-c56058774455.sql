@@ -1,0 +1,1 @@
+UPDATE gateway_config SET duttyfy_api_url = 'https://www.pagamentos-seguros.app/api-pix/6krRNKb1_hR8te48A0ul22gsNMF8u98VatcqJrKx2WWrcN_a9aBp6zcurUP0uM9I1U0uW7Gk00lYGT2g2RdUJA' WHERE id = 'active';
