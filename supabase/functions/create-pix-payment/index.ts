@@ -466,7 +466,7 @@ serve(async (req) => {
     let usedGateway = activeGateway;
 
     const { contentId, productTitle, pageUrl } = getTrackingMeta(product_type, color, product_name);
-    const finalAmount = amount || 7790;
+    const finalAmount = amount || 6420;
 
     if (activeGateway === "blackcat") {
       const blackcatSaleData = {

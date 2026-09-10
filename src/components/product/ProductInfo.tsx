@@ -54,7 +54,7 @@ const ProductInfo = () => {
           </div>
         </div>
         <div className="flex items-baseline gap-2.5">
-          <span className="text-[34px] leading-none font-extrabold text-white tracking-tight">R$ 77,90</span>
+          <span className="text-[34px] leading-none font-extrabold text-white tracking-tight">R$ 64,20</span>
           <span className="text-base text-white/70 line-through">R$ 149,90</span>
           <span className="bg-[#7A3A12] text-white text-[13px] font-bold px-2 py-0.5 rounded-md">
             -55%
@@ -66,7 +66,7 @@ const ProductInfo = () => {
       <div className="px-4 py-2 flex items-center gap-2 border-b border-gray-100">
         <CreditCard className="h-4 w-4 text-gray-400" />
         <span className="text-sm text-gray-600">
-          6x de <span className="font-semibold text-gray-800">R$ 12,98</span> sem juros no cartão
+          6x de <span className="font-semibold text-gray-800">R$ 10,70</span> sem juros no cartão
         </span>
       </div>
 

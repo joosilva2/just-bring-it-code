@@ -82,7 +82,7 @@ async function validateWithParadise(apiKey: string, transactionId: string | numb
 
 async function sendToUtmify(token: string, order: any) {
   const now = new Date().toISOString().replace('T', ' ').slice(0, 19);
-  const amount = order.amount || 7790;
+  const amount = order.amount || 6420;
 
   const payload = {
     orderId: order.external_ref,

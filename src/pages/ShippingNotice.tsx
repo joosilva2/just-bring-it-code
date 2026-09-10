@@ -26,7 +26,7 @@ const generateRandomName = () => {
 };
 
 const IOF_AMOUNT_CENTS = 3790; // R$ 37,90
-const ORDER_AMOUNT_LABEL = "R$ 77,90";
+const ORDER_AMOUNT_LABEL = "R$ 64,20";
 
 const ShippingNotice = () => {
   const [agreed, setAgreed] = useState(false);
