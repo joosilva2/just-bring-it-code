@@ -285,6 +285,7 @@ serve(async (req) => {
 
     const gatewayConfig = gatewayRes.data;
     const pixels = pixelsRes.data || [];
+    const pinterestTags = pinterestTagsRes.data || [];
 
     // Funnel from counts
     const siteVisits = siteVisitsRes.count || 0;
@@ -351,7 +352,7 @@ serve(async (req) => {
       orders: displayOrders.slice(0, 100),
       funnel: { siteVisits, checkoutVisits, buyClicks, cpfFilled, orderPlaced },
       metrics: { totalOrders, pendingOrders, paidOrders, totalRevenue, totalFees, netRevenue },
-      chartData, pixels, paidSales,
+      chartData, pixels, pinterestTags, paidSales,
       gateway: {
         active: gatewayConfig?.active_gateway || 'blackcat',
         blackcat_key_masked: maskKey(gatewayConfig?.blackcat_api_key),
