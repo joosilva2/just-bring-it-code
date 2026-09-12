@@ -293,6 +293,30 @@ export type Database = {
         }
         Relationships: []
       }
+      pinterest_tags: {
+        Row: {
+          created_at: string
+          id: string
+          is_active: boolean
+          label: string | null
+          tag_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          is_active?: boolean
+          label?: string | null
+          tag_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          is_active?: boolean
+          label?: string | null
+          tag_id?: string
+        }
+        Relationships: []
+      }
       site_records: {
         Row: {
           id: string

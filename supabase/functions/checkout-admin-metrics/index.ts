@@ -99,6 +99,27 @@ serve(async (req) => {
           headers: { ...corsHeaders, 'Content-Type': 'application/json' },
         });
       }
+      if (action === 'add-pinterest-tag') {
+        const body = await req.json();
+        const { tag_id, label } = body;
+        if (!tag_id?.trim()) throw new Error('tag_id is required');
+        const { error } = await supabaseAdmin.from('pinterest_tags').insert({
+          tag_id: tag_id.trim(), label: label || null,
+        });
+        if (error) throw error;
+        return new Response(JSON.stringify({ success: true }), {
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      }
+      if (action === 'delete-pinterest-tag') {
+        const body = await req.json();
+        const { id } = body;
+        if (!id) throw new Error('id is required');
+        await supabaseAdmin.from('pinterest_tags').delete().eq('id', id);
+        return new Response(JSON.stringify({ success: true }), {
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      }
       if (action === 'update-pixel') {
         const body = await req.json();
         const { id, track_pending, track_paid } = body;
