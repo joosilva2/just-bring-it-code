@@ -99,6 +99,27 @@ serve(async (req) => {
           headers: { ...corsHeaders, 'Content-Type': 'application/json' },
         });
       }
+      if (action === 'add-pinterest-tag') {
+        const body = await req.json();
+        const { tag_id, label } = body;
+        if (!tag_id?.trim()) throw new Error('tag_id is required');
+        const { error } = await supabaseAdmin.from('pinterest_tags').insert({
+          tag_id: tag_id.trim(), label: label || null,
+        });
+        if (error) throw error;
+        return new Response(JSON.stringify({ success: true }), {
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      }
+      if (action === 'delete-pinterest-tag') {
+        const body = await req.json();
+        const { id } = body;
+        if (!id) throw new Error('id is required');
+        await supabaseAdmin.from('pinterest_tags').delete().eq('id', id);
+        return new Response(JSON.stringify({ success: true }), {
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      }
       if (action === 'update-pixel') {
         const body = await req.json();
         const { id, track_pending, track_paid } = body;
@@ -190,7 +211,7 @@ serve(async (req) => {
     };
 
     // Run ALL queries in parallel for maximum speed
-    const [allOrdersRes, eventsCountRes, gatewayRes, pixelsRes, orderCountsRes] = await Promise.all([
+    const [allOrdersRes, eventsCountRes, gatewayRes, pixelsRes, pinterestTagsRes, orderCountsRes] = await Promise.all([
       // Orders for display (limited)
       (async () => {
         let q = supabaseAdmin
@@ -212,6 +233,7 @@ serve(async (req) => {
       ]),
       supabaseAdmin.from('gateway_config').select('*').eq('id', 'active').single(),
       supabaseAdmin.from('tiktok_pixels').select('*').order('created_at', { ascending: false }),
+      supabaseAdmin.from('pinterest_tags').select('*').order('created_at', { ascending: false }),
       // Precise count queries for metrics (not limited by 500 row cap)
       Promise.all([
         // Total orders count
@@ -263,6 +285,7 @@ serve(async (req) => {
 
     const gatewayConfig = gatewayRes.data;
     const pixels = pixelsRes.data || [];
+    const pinterestTags = pinterestTagsRes.data || [];
 
     // Funnel from counts
     const siteVisits = siteVisitsRes.count || 0;
@@ -329,7 +352,7 @@ serve(async (req) => {
       orders: displayOrders.slice(0, 100),
       funnel: { siteVisits, checkoutVisits, buyClicks, cpfFilled, orderPlaced },
       metrics: { totalOrders, pendingOrders, paidOrders, totalRevenue, totalFees, netRevenue },
-      chartData, pixels, paidSales,
+      chartData, pixels, pinterestTags, paidSales,
       gateway: {
         active: gatewayConfig?.active_gateway || 'blackcat',
         blackcat_key_masked: maskKey(gatewayConfig?.blackcat_api_key),
