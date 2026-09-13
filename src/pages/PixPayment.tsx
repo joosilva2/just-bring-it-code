@@ -147,6 +147,7 @@ const PixPayment = () => {
     let cancelled = false;
 
     const sendPurchase = async () => {
+      trackGooglePurchase(orderAmount || total, externalRef, 'BRL');
       await trackCompletePaymentAsync(orderAmount || total, 'BRL', `purchase_${externalRef}`, {
         contentId: 'armario-homeflex',
         contentName: variantNames[color] || 'Armário HomeFlex de Aço Multifuncional',
