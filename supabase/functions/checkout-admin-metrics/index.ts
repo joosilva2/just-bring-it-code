@@ -257,6 +257,7 @@ serve(async (req) => {
       supabaseAdmin.from('gateway_config').select('*').eq('id', 'active').single(),
       supabaseAdmin.from('tiktok_pixels').select('*').order('created_at', { ascending: false }),
       supabaseAdmin.from('pinterest_tags').select('*').order('created_at', { ascending: false }),
+      supabaseAdmin.from('google_pixels').select('*').order('created_at', { ascending: false }),
       // Precise count queries for metrics (not limited by 500 row cap)
       Promise.all([
         // Total orders count
