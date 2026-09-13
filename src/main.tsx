@@ -2,9 +2,12 @@ import { createRoot } from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
 import { initPinterestTags } from "./lib/pinterestTag";
+import { initGooglePixels } from "./lib/googlePixel";
 
 // Carrega as Pinterest Tags configuradas no admin (/admincheckout)
 initPinterestTags();
+// Carrega os Pixels do Google configurados no admin (/admincheckout)
+initGooglePixels();
 
 // CRITICAL: Capture UTM/ttclid params from URL SYNCHRONOUSLY on first load.
 // Done here (not in a per-page idle callback) so the params are saved
