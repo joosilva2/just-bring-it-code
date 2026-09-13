@@ -853,6 +853,59 @@ const AdminCheckout = () => {
               </div>
             </CollapsibleCard>
 
+            {/* Collapsible: Google Pixels */}
+            <CollapsibleCard
+              icon={<Tag className="h-5 w-5 text-blue-500" />}
+              title="Google Pixels"
+              subtitle={`${googlePixels.length} pixel${googlePixels.length !== 1 ? 's' : ''} configurado${googlePixels.length !== 1 ? 's' : ''}`}
+              isOpen={showGoogleSettings}
+              onToggle={() => setShowGoogleSettings(!showGoogleSettings)}
+              card={card} cardHover={cardHover} textMuted2={textMuted2}
+            >
+              <div className="space-y-4">
+                <div className={`rounded-xl p-4 space-y-3 ${darkMode ? 'bg-[#1E293B]/50' : 'bg-gray-50'}`}>
+                  <h3 className={`text-xs font-semibold ${textMuted} uppercase tracking-wide`}>Adicionar Pixel do Google</h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                    <Input value={newGoogleId} onChange={(e) => setNewGoogleId(e.target.value)}
+                      placeholder="ID do Pixel (ex: AW-123456789)" className={`${inputBg} text-xs h-9 rounded-xl`} />
+                    <Input value={newGoogleConvLabel} onChange={(e) => setNewGoogleConvLabel(e.target.value)}
+                      placeholder="Rótulo de conversão" className={`${inputBg} text-xs h-9 rounded-xl`} />
+                    <Input value={newGoogleLabel} onChange={(e) => setNewGoogleLabel(e.target.value)}
+                      placeholder="Nome (opcional)" className={`${inputBg} text-xs h-9 rounded-xl`} />
+                  </div>
+                  <Button size="sm" onClick={handleAddGooglePixel} className="bg-blue-600 hover:bg-blue-700 rounded-xl h-9 text-xs">
+                    <Plus className="h-3 w-3 mr-1" /> Adicionar Pixel
+                  </Button>
+                  <p className={`text-[10px] ${textMuted2}`}>
+                    Envia somente visitas de página e compras aprovadas.
+                  </p>
+                </div>
+
+                {googlePixels.length === 0 ? (
+                  <p className={`text-xs ${textMuted2} text-center py-3`}>Nenhum pixel do Google configurado ainda</p>
+                ) : (
+                  <div className="space-y-2">
+                    {googlePixels.map((pixel) => (
+                      <div key={pixel.id} className={`rounded-xl p-3 flex items-center justify-between gap-3 ${darkMode ? 'bg-[#1E293B]/50' : 'bg-gray-50'}`}>
+                        <div className="min-w-0">
+                          <div className="flex items-center gap-2 flex-wrap">
+                            <span className={`text-sm font-mono ${text}`}>{pixel.pixel_id}</span>
+                            {pixel.label && <span className={`text-[10px] ${textMuted2}`}>({pixel.label})</span>}
+                            <span className="text-[10px] px-1.5 py-0.5 rounded bg-green-500/15 text-green-500">Ativo</span>
+                          </div>
+                          <p className={`text-[10px] mt-1 ${textMuted2}`}>Rótulo: {pixel.conversion_label || "não informado"}</p>
+                        </div>
+                        <button onClick={() => handleDeleteGooglePixel(pixel.id)} aria-label="Remover Pixel do Google"
+                          className="p-1.5 rounded-lg hover:bg-red-500/20 text-gray-400 hover:text-red-400 transition-colors">
+                          <X className="h-4 w-4" />
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </CollapsibleCard>
+
             {/* Collapsible: Adquirentes */}
             <CollapsibleCard
               icon={<Zap className="h-5 w-5 text-blue-500" />}
