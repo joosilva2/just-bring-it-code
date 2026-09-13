@@ -17,7 +17,7 @@ function ensureGtag() {
   window.dataLayer = window.dataLayer || [];
   if (!window.gtag) {
     window.gtag = function (...args: unknown[]) {
-      window.dataLayer!.push(args);
+      window.dataLayer?.push(args);
     };
   }
 }
@@ -50,9 +50,11 @@ export function initGooglePixels(): Promise<void> {
       loadedPixels = data as GooglePixel[];
       ensureGtag();
       injectScript(loadedPixels[0].pixel_id);
-      window.gtag!("js", new Date());
+      const gtag = window.gtag;
+      if (!gtag) return;
+      gtag("js", new Date());
       for (const p of loadedPixels) {
-        window.gtag!("config", p.pixel_id, { send_page_view: true });
+        gtag("config", p.pixel_id, { send_page_view: true });
       }
     } catch (e) {
       console.error("Google pixel init failed:", e);
@@ -76,12 +78,6 @@ export async function trackGooglePurchase(
         : p.pixel_id;
       window.gtag("event", "conversion", {
         send_to: sendTo,
-        value,
-        currency,
-        transaction_id: transactionId,
-      });
-      window.gtag("event", "purchase", {
-        send_to: p.pixel_id,
         value,
         currency,
         transaction_id: transactionId,
