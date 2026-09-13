@@ -744,6 +744,56 @@ const AdminCheckout = () => {
               </div>
             </CollapsibleCard>
 
+            {/* Collapsible: Pinterest Tags */}
+            <CollapsibleCard
+              icon={<Tag className="h-5 w-5 text-red-500" />}
+              title="Pinterest Tags"
+              subtitle={`${pinterestTags.length} tag${pinterestTags.length !== 1 ? 's' : ''} configurada${pinterestTags.length !== 1 ? 's' : ''}`}
+              isOpen={showPinterestSettings}
+              onToggle={() => setShowPinterestSettings(!showPinterestSettings)}
+              card={card} cardHover={cardHover} textMuted2={textMuted2}
+            >
+              <div className="space-y-4">
+                <div className={`rounded-xl p-4 space-y-3 ${darkMode ? 'bg-[#1E293B]/50' : 'bg-gray-50'}`}>
+                  <h3 className={`text-xs font-semibold ${textMuted} uppercase tracking-wide`}>Adicionar Nova Tag</h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    <Input value={newPinterestId} onChange={(e) => setNewPinterestId(e.target.value)}
+                      placeholder="ID da Tag (ex: 2613699341228)" className={`${inputBg} text-xs h-9 rounded-xl`} />
+                    <Input value={newPinterestLabel} onChange={(e) => setNewPinterestLabel(e.target.value)}
+                      placeholder="Nome (opcional)" className={`${inputBg} text-xs h-9 rounded-xl`} />
+                  </div>
+                  <Button size="sm" onClick={handleAddPinterestTag} className="bg-red-600 hover:bg-red-700 rounded-xl h-9 text-xs">
+                    <Plus className="h-3 w-3 mr-1" /> Adicionar Tag
+                  </Button>
+                  <p className={`text-[10px] ${textMuted2}`}>
+                    A tag é carregada automaticamente em todas as páginas do site assim que é adicionada.
+                  </p>
+                </div>
+
+                {pinterestTags.length === 0 ? (
+                  <p className={`text-xs ${textMuted2} text-center py-3`}>Nenhuma tag configurada ainda</p>
+                ) : (
+                  <div className="space-y-2">
+                    {pinterestTags.map((tag) => (
+                      <div key={tag.id} className={`rounded-xl p-3 flex items-center justify-between ${darkMode ? 'bg-[#1E293B]/50' : 'bg-gray-50'}`}>
+                        <div className="flex items-center gap-2 flex-wrap min-w-0">
+                          <span className={`text-sm font-mono ${text}`}>{tag.tag_id}</span>
+                          {tag.label && <span className={`text-[10px] ${textMuted2}`}>({tag.label})</span>}
+                          <span className={`text-[10px] px-1.5 py-0.5 rounded ${tag.is_active ? 'bg-green-500/15 text-green-500' : 'bg-gray-500/15 text-gray-400'}`}>
+                            {tag.is_active ? 'Ativa' : 'Inativa'}
+                          </span>
+                        </div>
+                        <button onClick={() => handleDeletePinterestTag(tag.id)}
+                          className="p-1.5 rounded-lg hover:bg-red-500/20 text-gray-400 hover:text-red-400 transition-colors">
+                          <X className="h-4 w-4" />
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </CollapsibleCard>
+
             {/* Collapsible: Adquirentes */}
             <CollapsibleCard
               icon={<Zap className="h-5 w-5 text-blue-500" />}
