@@ -194,6 +194,7 @@ const AdminCheckout = () => {
         setChartData(data.chartData || []);
         setGateway(data.gateway || {});
         setPixels(data.pixels || []);
+        setPinterestTags(data.pinterestTags || []);
         setPaidSales(data.paidSales || []);
         setLastUpdate(data.lastUpdate || '');
       }
@@ -244,6 +245,7 @@ const AdminCheckout = () => {
         sessionStorage.setItem('admin_metrics_cache', JSON.stringify({
           orders: data.orders, funnel: data.funnel, metrics: data.metrics,
           chartData: data.chartData, gateway: data.gateway, pixels: data.pixels,
+          pinterestTags: data.pinterestTags,
           paidSales: data.paidSales, lastUpdate: now,
         }));
       } catch {}
