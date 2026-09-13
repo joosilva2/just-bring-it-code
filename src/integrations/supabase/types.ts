@@ -128,6 +128,33 @@ export type Database = {
         }
         Relationships: []
       }
+      google_pixels: {
+        Row: {
+          conversion_label: string | null
+          created_at: string
+          id: string
+          is_active: boolean
+          label: string | null
+          pixel_id: string
+        }
+        Insert: {
+          conversion_label?: string | null
+          created_at?: string
+          id?: string
+          is_active?: boolean
+          label?: string | null
+          pixel_id: string
+        }
+        Update: {
+          conversion_label?: string | null
+          created_at?: string
+          id?: string
+          is_active?: boolean
+          label?: string | null
+          pixel_id?: string
+        }
+        Relationships: []
+      }
       orders: {
         Row: {
           ad_id: string | null
