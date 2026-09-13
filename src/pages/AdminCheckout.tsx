@@ -152,6 +152,11 @@ const AdminCheckout = () => {
   const [pinterestTags, setPinterestTags] = useState<PinterestTag[]>([]);
   const [newPinterestId, setNewPinterestId] = useState("");
   const [newPinterestLabel, setNewPinterestLabel] = useState("");
+  const [showGoogleSettings, setShowGoogleSettings] = useState(false);
+  const [googlePixels, setGooglePixels] = useState<GooglePixel[]>([]);
+  const [newGoogleId, setNewGoogleId] = useState("");
+  const [newGoogleConvLabel, setNewGoogleConvLabel] = useState("");
+  const [newGoogleLabel, setNewGoogleLabel] = useState("");
   const [lastUpdate, setLastUpdate] = useState("");
   const [redirectUrl, setRedirectUrl] = useState("");
   const [redirectUrlSaved, setRedirectUrlSaved] = useState("");
