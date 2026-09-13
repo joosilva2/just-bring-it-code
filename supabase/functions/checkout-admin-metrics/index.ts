@@ -310,6 +310,7 @@ serve(async (req) => {
     const gatewayConfig = gatewayRes.data;
     const pixels = pixelsRes.data || [];
     const pinterestTags = pinterestTagsRes.data || [];
+    const googlePixels = googlePixelsRes.data || [];
 
     // Funnel from counts
     const siteVisits = siteVisitsRes.count || 0;
