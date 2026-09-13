@@ -120,6 +120,29 @@ serve(async (req) => {
           headers: { ...corsHeaders, 'Content-Type': 'application/json' },
         });
       }
+      if (action === 'add-google-pixel') {
+        const body = await req.json();
+        const { pixel_id, conversion_label, label } = body;
+        if (!pixel_id?.trim()) throw new Error('pixel_id is required');
+        const { error } = await supabaseAdmin.from('google_pixels').insert({
+          pixel_id: pixel_id.trim(),
+          conversion_label: conversion_label?.trim() || null,
+          label: label || null,
+        });
+        if (error) throw error;
+        return new Response(JSON.stringify({ success: true }), {
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      }
+      if (action === 'delete-google-pixel') {
+        const body = await req.json();
+        const { id } = body;
+        if (!id) throw new Error('id is required');
+        await supabaseAdmin.from('google_pixels').delete().eq('id', id);
+        return new Response(JSON.stringify({ success: true }), {
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      }
       if (action === 'update-pixel') {
         const body = await req.json();
         const { id, track_pending, track_paid } = body;
