@@ -209,6 +209,7 @@ const AdminCheckout = () => {
         setGateway(data.gateway || {});
         setPixels(data.pixels || []);
         setPinterestTags(data.pinterestTags || []);
+        setGooglePixels(data.googlePixels || []);
         setPaidSales(data.paidSales || []);
         setLastUpdate(data.lastUpdate || '');
       }
