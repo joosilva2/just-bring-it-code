@@ -62,6 +62,15 @@ interface PinterestTag {
   created_at: string;
 }
 
+interface GooglePixel {
+  id: string;
+  pixel_id: string;
+  conversion_label: string | null;
+  label: string | null;
+  is_active: boolean;
+  created_at: string;
+}
+
 interface PaidSale {
   id: string;
   customer_name: string;
@@ -143,6 +152,11 @@ const AdminCheckout = () => {
   const [pinterestTags, setPinterestTags] = useState<PinterestTag[]>([]);
   const [newPinterestId, setNewPinterestId] = useState("");
   const [newPinterestLabel, setNewPinterestLabel] = useState("");
+  const [showGoogleSettings, setShowGoogleSettings] = useState(false);
+  const [googlePixels, setGooglePixels] = useState<GooglePixel[]>([]);
+  const [newGoogleId, setNewGoogleId] = useState("");
+  const [newGoogleConvLabel, setNewGoogleConvLabel] = useState("");
+  const [newGoogleLabel, setNewGoogleLabel] = useState("");
   const [lastUpdate, setLastUpdate] = useState("");
   const [redirectUrl, setRedirectUrl] = useState("");
   const [redirectUrlSaved, setRedirectUrlSaved] = useState("");
@@ -195,6 +209,7 @@ const AdminCheckout = () => {
         setGateway(data.gateway || {});
         setPixels(data.pixels || []);
         setPinterestTags(data.pinterestTags || []);
+        setGooglePixels(data.googlePixels || []);
         setPaidSales(data.paidSales || []);
         setLastUpdate(data.lastUpdate || '');
       }
@@ -236,6 +251,7 @@ const AdminCheckout = () => {
       setGateway(data.gateway || {});
       setPixels(data.pixels || []);
       setPinterestTags(data.pinterestTags || []);
+      setGooglePixels(data.googlePixels || []);
       setPaidSales(data.paidSales || []);
       const now = new Date().toLocaleTimeString("pt-BR");
       setLastUpdate(now);

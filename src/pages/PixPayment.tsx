@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import { ArrowLeft, Copy, CheckCircle } from "lucide-react";
 import { initTikTokPixels, identifyTikTokUser, trackCompletePaymentAsync } from "@/lib/tiktokPixel";
+import { trackGooglePurchase } from "@/lib/googlePixel";
 import { supabase } from "@/integrations/supabase/client";
 
 const formatBRL = (cents: number) => (cents / 100).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
@@ -147,6 +148,7 @@ const PixPayment = () => {
     let cancelled = false;
 
     const sendPurchase = async () => {
+      trackGooglePurchase(orderAmount || total, externalRef, 'BRL');
       await trackCompletePaymentAsync(orderAmount || total, 'BRL', `purchase_${externalRef}`, {
         contentId: 'armario-homeflex',
         contentName: variantNames[color] || 'Armário HomeFlex de Aço Multifuncional',
