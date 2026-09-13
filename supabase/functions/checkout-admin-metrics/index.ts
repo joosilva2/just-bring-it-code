@@ -234,7 +234,7 @@ serve(async (req) => {
     };
 
     // Run ALL queries in parallel for maximum speed
-    const [allOrdersRes, eventsCountRes, gatewayRes, pixelsRes, pinterestTagsRes, orderCountsRes] = await Promise.all([
+    const [allOrdersRes, eventsCountRes, gatewayRes, pixelsRes, pinterestTagsRes, googlePixelsRes, orderCountsRes] = await Promise.all([
       // Orders for display (limited)
       (async () => {
         let q = supabaseAdmin
