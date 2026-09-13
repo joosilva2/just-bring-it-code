@@ -261,7 +261,7 @@ const AdminCheckout = () => {
         sessionStorage.setItem('admin_metrics_cache', JSON.stringify({
           orders: data.orders, funnel: data.funnel, metrics: data.metrics,
           chartData: data.chartData, gateway: data.gateway, pixels: data.pixels,
-          pinterestTags: data.pinterestTags,
+          pinterestTags: data.pinterestTags, googlePixels: data.googlePixels,
           paidSales: data.paidSales, lastUpdate: now,
         }));
       } catch {}
@@ -439,6 +439,49 @@ const AdminCheckout = () => {
       setPinterestTags(prev => prev.filter(t => t.id !== id));
       toast.success("Tag removida!");
     } catch { toast.error("Erro ao remover tag"); }
+  };
+
+  const handleAddGooglePixel = async () => {
+    if (!session?.access_token || !newGoogleId.trim()) {
+      toast.error("Insira o ID do Pixel do Google");
+      return;
+    }
+    try {
+      const resp = await fetch(`${SUPABASE_URL}/functions/v1/checkout-admin-metrics?action=add-google-pixel`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Authorization: `Bearer ${session.access_token}` },
+        body: JSON.stringify({
+          pixel_id: newGoogleId.trim(),
+          conversion_label: newGoogleConvLabel.trim() || null,
+          label: newGoogleLabel.trim() || null,
+        }),
+      });
+      const result = await resp.json();
+      if (!resp.ok || result.error) throw new Error(result.error || "Failed");
+      setNewGoogleId("");
+      setNewGoogleConvLabel("");
+      setNewGoogleLabel("");
+      toast.success("Pixel do Google adicionado!");
+      fetchMetrics();
+    } catch {
+      toast.error("Erro ao adicionar pixel do Google");
+    }
+  };
+
+  const handleDeleteGooglePixel = async (id: string) => {
+    if (!session?.access_token || !confirm("Remover este Pixel do Google?")) return;
+    try {
+      const resp = await fetch(`${SUPABASE_URL}/functions/v1/checkout-admin-metrics?action=delete-google-pixel`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Authorization: `Bearer ${session.access_token}` },
+        body: JSON.stringify({ id }),
+      });
+      if (!resp.ok) throw new Error("Failed");
+      setGooglePixels((current) => current.filter((pixel) => pixel.id !== id));
+      toast.success("Pixel do Google removido!");
+    } catch {
+      toast.error("Erro ao remover pixel do Google");
+    }
   };
 
   const handleTogglePixelSetting = async (pixel: TikTokPixel, field: "track_pending" | "track_paid") => {
