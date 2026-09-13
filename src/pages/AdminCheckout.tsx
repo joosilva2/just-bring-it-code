@@ -251,6 +251,7 @@ const AdminCheckout = () => {
       setGateway(data.gateway || {});
       setPixels(data.pixels || []);
       setPinterestTags(data.pinterestTags || []);
+      setGooglePixels(data.googlePixels || []);
       setPaidSales(data.paidSales || []);
       const now = new Date().toLocaleTimeString("pt-BR");
       setLastUpdate(now);
