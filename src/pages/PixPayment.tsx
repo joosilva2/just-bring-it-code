@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import { ArrowLeft, Copy, CheckCircle } from "lucide-react";
 import { initTikTokPixels, identifyTikTokUser, trackCompletePaymentAsync } from "@/lib/tiktokPixel";
+import { trackGooglePurchase } from "@/lib/googlePixel";
 import { supabase } from "@/integrations/supabase/client";
 
 const formatBRL = (cents: number) => (cents / 100).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
