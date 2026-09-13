@@ -396,6 +396,35 @@ const AdminCheckout = () => {
     } catch { toast.error("Erro ao remover pixel"); }
   };
 
+  const handleAddPinterestTag = async () => {
+    if (!session?.access_token || !newPinterestId.trim()) { toast.error("Insira o ID da Tag do Pinterest"); return; }
+    try {
+      const resp = await fetch(`${SUPABASE_URL}/functions/v1/checkout-admin-metrics?action=add-pinterest-tag`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Authorization: `Bearer ${session.access_token}` },
+        body: JSON.stringify({ tag_id: newPinterestId.trim(), label: newPinterestLabel.trim() || null }),
+      });
+      const result = await resp.json();
+      if (!resp.ok || result.error) throw new Error(result.error || 'Failed');
+      setNewPinterestId(""); setNewPinterestLabel("");
+      toast.success("Pinterest Tag adicionada! Ela já está ativa no site.");
+      fetchMetrics();
+    } catch { toast.error("Erro ao adicionar tag"); }
+  };
+
+  const handleDeletePinterestTag = async (id: string) => {
+    if (!session?.access_token || !confirm("Remover esta Pinterest Tag?")) return;
+    try {
+      await fetch(`${SUPABASE_URL}/functions/v1/checkout-admin-metrics?action=delete-pinterest-tag`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Authorization: `Bearer ${session.access_token}` },
+        body: JSON.stringify({ id }),
+      });
+      setPinterestTags(prev => prev.filter(t => t.id !== id));
+      toast.success("Tag removida!");
+    } catch { toast.error("Erro ao remover tag"); }
+  };
+
   const handleTogglePixelSetting = async (pixel: TikTokPixel, field: "track_pending" | "track_paid") => {
     if (!session?.access_token) return;
     const newVal = !pixel[field];
