@@ -140,6 +140,9 @@ const AdminCheckout = () => {
   const [newPixelPending, setNewPixelPending] = useState(false);
   const [newPixelPaid, setNewPixelPaid] = useState(true);
   const [newPixelToken, setNewPixelToken] = useState("TIKTOK_ACCESS_TOKEN");
+  const [pinterestTags, setPinterestTags] = useState<PinterestTag[]>([]);
+  const [newPinterestId, setNewPinterestId] = useState("");
+  const [newPinterestLabel, setNewPinterestLabel] = useState("");
   const [lastUpdate, setLastUpdate] = useState("");
   const [redirectUrl, setRedirectUrl] = useState("");
   const [redirectUrlSaved, setRedirectUrlSaved] = useState("");
@@ -231,6 +234,7 @@ const AdminCheckout = () => {
       setChartData(data.chartData || []);
       setGateway(data.gateway || {});
       setPixels(data.pixels || []);
+      setPinterestTags(data.pinterestTags || []);
       setPaidSales(data.paidSales || []);
       const now = new Date().toLocaleTimeString("pt-BR");
       setLastUpdate(now);
