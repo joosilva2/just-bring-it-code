@@ -62,6 +62,15 @@ interface PinterestTag {
   created_at: string;
 }
 
+interface GooglePixel {
+  id: string;
+  pixel_id: string;
+  conversion_label: string | null;
+  label: string | null;
+  is_active: boolean;
+  created_at: string;
+}
+
 interface PaidSale {
   id: string;
   customer_name: string;
