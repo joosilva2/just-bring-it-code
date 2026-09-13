@@ -54,6 +54,14 @@ interface TikTokPixel {
   access_token_env: string;
 }
 
+interface PinterestTag {
+  id: string;
+  tag_id: string;
+  label: string | null;
+  is_active: boolean;
+  created_at: string;
+}
+
 interface PaidSale {
   id: string;
   customer_name: string;
@@ -118,6 +126,7 @@ const AdminCheckout = () => {
   const [pendingGateway, setPendingGateway] = useState<string | null>(null);
   const [showGatewaySettings, setShowGatewaySettings] = useState(false);
   const [showPixelSettings, setShowPixelSettings] = useState(false);
+  const [showPinterestSettings, setShowPinterestSettings] = useState(false);
   const [showUtmifySection, setShowUtmifySection] = useState(false);
   const [showRedirectSection, setShowRedirectSection] = useState(false);
   const [newBlackcatKey, setNewBlackcatKey] = useState("");
