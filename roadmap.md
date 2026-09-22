@@ -1,3 +1,3 @@
-- [ ] Trocar “Pague 1 Leve 2” por “Pague 1 e Leve 2” em toda a jornada.
-- [ ] Simplificar a fonte da promoção relâmpago, especialmente o preço.
-- [ ] Remover o ícone de compartilhamento do topo.
+- [x] Trocar “Pague 1 Leve 2” por “Pague 1 e Leve 2” em toda a jornada.
+- [x] Simplificar a fonte da promoção relâmpago, especialmente o preço.
+- [x] Remover o ícone de compartilhamento do topo.
