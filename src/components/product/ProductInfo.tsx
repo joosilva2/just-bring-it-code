@@ -57,7 +57,7 @@ const ProductInfo = () => {
           <span className="text-[34px] leading-none font-extrabold text-white tracking-tight">R$ 82,40</span>
           <span className="text-base text-white/70 line-through">R$ 149,90</span>
           <span className="bg-[#7A3A12] text-white text-[13px] font-bold px-2 py-0.5 rounded-md">
-            -55%
+            -45%
           </span>
         </div>
       </div>
