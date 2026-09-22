@@ -58,7 +58,7 @@ const ProductDescription = () => {
         </p>
 
         <p>
-          <strong className="text-foreground">✅ PAGUE 1 LEVE 2:</strong> Promoção relâmpago — compre 1 e
+          <strong className="text-foreground">✅ PAGUE 1 E LEVE 2:</strong> Promoção relâmpago — compre 1 e
           leve 2 unidades. Combine cores (2 pretos, 2 brancos ou 1 de cada) para organizar diferentes
           ambientes.
         </p>

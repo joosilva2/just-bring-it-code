@@ -1,17 +1,8 @@
-import { Share2, ShieldCheck } from "lucide-react";
+import { ShieldCheck } from "lucide-react";
 import logoCasaPratica from "@/assets/casapratica-logo.png";
-import { Button } from "@/components/ui/button";
 
 const ProductHeader = () => {
-  const handleShare = async () => {
-    if (navigator.share) {
-      await navigator.share({ title: "Casa Prática", url: window.location.href }).catch(() => undefined);
-      return;
-    }
-    await navigator.clipboard?.writeText(window.location.href).catch(() => undefined);
-  };
-
-  return <header className="w-full bg-background px-4 py-2.5 flex items-center justify-between border-b border-border">
+  return <header className="w-full bg-background px-4 py-2.5 flex items-center border-b border-border">
       <div className="flex items-center gap-2.5 min-w-0">
         <img src={logoCasaPratica} alt="Casa Prática" className="h-9 w-9 rounded-full object-cover" />
         <div className="min-w-0">
@@ -21,9 +12,6 @@ const ProductHeader = () => {
           </p>
         </div>
       </div>
-      <Button variant="ghost" size="icon" onClick={handleShare} aria-label="Compartilhar produto" title="Compartilhar produto">
-        <Share2 className="h-5 w-5 text-foreground" />
-      </Button>
     </header>;
 };
 export default ProductHeader;

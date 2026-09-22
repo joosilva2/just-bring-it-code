@@ -482,7 +482,7 @@ const Checkout = () => {
         <div className="flex gap-3">
           <img src={productImage} alt="Armário HomeFlex" className="w-20 h-20 rounded-lg object-contain bg-gray-50" />
           <div className="flex-1 min-w-0">
-            <p className="text-sm text-gray-800 leading-snug line-clamp-2">[PAGUE 1 LEVE 2] Armário HomeFlex de Aço Multifuncional</p>
+            <p className="text-sm text-gray-800 leading-snug line-clamp-2">[PAGUE 1 E LEVE 2] Armário HomeFlex de Aço Multifuncional</p>
             <p className="text-xs text-gray-500 mt-0.5">{colorLabel}</p>
             <div className="flex items-center gap-1 mt-0.5">
               <span className="text-[10px] bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded-full">🔄 Devolução gratuita</span>
