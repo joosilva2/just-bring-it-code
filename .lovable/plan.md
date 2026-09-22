@@ -1,10 +1,8 @@
-## Tornar a página mais confiável
+## Melhorar a credibilidade sem remover provas sociais
 
-- Manter as mesmas cores, a mesma sequência da página e o preço atual.
-- Substituir o contador e a “promoção relâmpago” por uma oferta simples, sem urgência artificial.
-- Remover números sem comprovação, como vendas recentes, estoque, seguidores, recomendações e avaliações fabricadas.
-- Retirar o pop-up de saída com cupom e contagem regressiva.
-- Corrigir textos de entrega, benefícios, descrição e perguntas que prometem condições não confirmadas ou falam de outro produto.
-- Deixar a identificação da Casa Prática mais clara e sóbria.
-- Aplicar uma tipografia humana e acessível nos títulos e textos.
-- Conferir a página em computador e celular após as mudanças.
+- Manter as cores e a organização atuais.
+- Manter vendas, estoque, recomendações, avaliações e o pop-up.
+- Manter os textos atuais de entrega, benefícios, descrição e perguntas.
+- Melhorar somente outros sinais visuais de confiança, como a identificação da Casa Prática e a coerência dos controles.
+- Aplicar Outfit nos títulos e Figtree nos textos, sem alterar o conteúdo preservado.
+- Validar a página em computador e celular.

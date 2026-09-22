@@ -1,0 +1,4 @@
+- [ ] Manter vendas, estoque, recomendações e avaliações existentes.
+- [ ] Manter o pop-up de saída e seus textos.
+- [ ] Manter textos atuais de entrega, benefícios, descrição e perguntas.
+- [ ] Melhorar credibilidade somente em outros elementos da página, preservando cores e organização.
