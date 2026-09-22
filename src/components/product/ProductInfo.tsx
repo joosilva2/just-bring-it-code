@@ -24,22 +24,22 @@ const ProductInfo = () => {
     <div className="bg-white">
       {/* Flash sale banner */}
       <div className="bg-[#ED7E2D] px-5 py-4">
-        <div className="flex items-center justify-between gap-2 mb-3">
-          <div className="flex items-center gap-3 min-w-0">
+        <div className="flex flex-col gap-2 mb-3">
+          <div className="flex items-center justify-between gap-3 min-w-0">
             <div className="flex items-center gap-1 whitespace-nowrap">
               <Zap className="h-4 w-4 text-yellow-300 fill-yellow-300 flex-shrink-0" />
               <span className="font-sans text-xs font-semibold text-white uppercase leading-none tracking-normal">
                 Pague 1 e Leve 2
               </span>
             </div>
-            <div className="hidden min-[375px]:flex items-center gap-1 whitespace-nowrap">
+            <div className="flex items-center gap-1 whitespace-nowrap">
               <Zap className="h-4 w-4 text-yellow-300 fill-yellow-300 flex-shrink-0" />
               <span className="font-sans text-xs font-semibold text-white uppercase leading-none tracking-normal">
                 Promoção relâmpago
               </span>
             </div>
           </div>
-          <div className="flex items-center gap-1 flex-shrink-0">
+          <div className="flex items-center gap-1 self-end flex-shrink-0">
             <span className="bg-[#7A3A12] text-white text-[13px] font-bold px-2 py-1 rounded-md tabular-nums min-w-[28px] text-center">
               {pad(timeLeft.hours)}
             </span>
