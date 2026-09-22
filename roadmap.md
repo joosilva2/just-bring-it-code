@@ -1,4 +1,3 @@
-- [x] Manter vendas, estoque, recomendações e avaliações existentes.
-- [x] Manter o pop-up de saída e seus textos.
-- [x] Manter textos atuais de entrega, benefícios, descrição e perguntas.
-- [x] Melhorar credibilidade somente em outros elementos da página, preservando cores e organização.
+- [ ] Trocar “Pague 1 Leve 2” por “Pague 1 e Leve 2” em toda a jornada.
+- [ ] Simplificar a fonte da promoção relâmpago, especialmente o preço.
+- [ ] Remover o ícone de compartilhamento do topo.
