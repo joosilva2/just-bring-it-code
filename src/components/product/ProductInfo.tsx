@@ -28,13 +28,13 @@ const ProductInfo = () => {
           <div className="flex items-start gap-5 flex-1">
             <div className="flex items-start gap-1.5">
               <Zap className="h-4 w-4 text-yellow-300 fill-yellow-300 mt-0.5 flex-shrink-0" />
-              <span className="text-[15px] font-extrabold text-white uppercase leading-[1.05] tracking-tight">
-                Pague 1<br />Leve 2
+              <span className="font-sans text-[14px] font-semibold text-white uppercase leading-tight tracking-normal">
+                Pague 1 e<br />Leve 2
               </span>
             </div>
             <div className="flex items-start gap-1.5">
               <Zap className="h-4 w-4 text-yellow-300 fill-yellow-300 mt-0.5 flex-shrink-0" />
-              <span className="text-[15px] font-extrabold text-white uppercase leading-[1.05] tracking-tight">
+              <span className="font-sans text-[14px] font-semibold text-white uppercase leading-tight tracking-normal">
                 Promoção<br />Relâmpago
               </span>
             </div>
@@ -54,7 +54,7 @@ const ProductInfo = () => {
           </div>
         </div>
         <div className="flex items-baseline gap-2.5">
-          <span className="text-[34px] leading-none font-extrabold text-white tracking-tight">R$ 82,40</span>
+          <span className="font-sans text-[32px] leading-none font-semibold text-white tracking-normal">R$ 82,40</span>
           <span className="text-base text-white/70 line-through">R$ 149,90</span>
           <span className="bg-[#7A3A12] text-white text-[13px] font-bold px-2 py-0.5 rounded-md">
             -45%
@@ -74,14 +74,14 @@ const ProductInfo = () => {
       <div className="px-4 pt-3 pb-2">
         <span className="inline-flex items-center gap-1.5 bg-green-50 border border-green-200 text-green-700 text-sm font-bold px-3 py-1.5 rounded-full">
           <Tag className="h-3.5 w-3.5" />
-          Pague 1 Leve 2
+          Pague 1 e Leve 2
         </span>
       </div>
 
       {/* Product title & rating */}
       <div className="px-4 pb-3">
         <h1 className="text-base font-medium text-gray-800 leading-snug mb-2">
-          [PAGUE 1 LEVE 2] Armário HomeFlex de Aço Multifuncional — Organizador Resistente para Cozinha, Banheiro e Lavanderia
+          [PAGUE 1 E LEVE 2] Armário HomeFlex de Aço Multifuncional — Organizador Resistente para Cozinha, Banheiro e Lavanderia
         </h1>
         <div className="flex items-center gap-2 mb-1">
           <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
