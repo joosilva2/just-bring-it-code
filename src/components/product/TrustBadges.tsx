@@ -1,7 +1,7 @@
 import { ShieldCheck, Package, PenLine, ShieldCheck as ShieldIcon, Truck } from "lucide-react";
 
 const items = [
-  { icon: Package, text: "Pague 1 e Leve 2", color: "text-orange-500" },
+  { icon: Package, text: "Pague 1 Leve 2", color: "text-orange-500" },
   { icon: PenLine, text: "Aço multifuncional", color: "text-blue-500" },
   { icon: ShieldIcon, text: "Garantia de 1 ano", color: "text-green-600" },
   { icon: Truck, text: "Frete grátis", color: "text-green-600" },

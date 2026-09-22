@@ -1,3 +1,0 @@
-- [x] Atualizar o rodapé para © 2026 CasaPrática.
-- [x] Exibir “Pague 1 e Leve 2” em linha reta.
-- [x] Aplicar Montserrat mais pesada ao preço.

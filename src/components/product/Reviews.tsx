@@ -1,7 +1,4 @@
 import { Star, Image as ImageIcon } from "lucide-react";
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
 import reviewFlex1 from "@/assets/review-flex-1.png";
 import reviewFlex2 from "@/assets/review-flex-2.png";
 import reviewFlex3 from "@/assets/review-flex-3.png";
@@ -72,8 +69,6 @@ const Stars = ({ count }: { count: number }) => (
 );
 
 const Reviews = () => {
-  const [expandedImage, setExpandedImage] = useState<{ src: string; reviewer: string } | null>(null);
-
   return (
     <div className="px-4 py-5 bg-white">
       <h2 className="text-base font-semibold text-foreground mb-2">
@@ -97,22 +92,12 @@ const Reviews = () => {
             {r.images && r.images.length > 0 && (
               <div className="flex items-center gap-3 mt-2.5">
                 {r.images.map((img, idx) => (
-                  <Button
+                  <div
                     key={idx}
-                    type="button"
-                    variant="ghost"
-                    className="h-16 w-16 flex-shrink-0 overflow-hidden rounded-lg border border-border p-0 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-                    onClick={() => setExpandedImage({ src: img, reviewer: r.name.trim() })}
-                    aria-label={`Ampliar foto da avaliação de ${r.name.trim()}`}
+                    className="h-16 w-16 rounded-lg overflow-hidden border border-border flex-shrink-0"
                   >
-                    <img
-                      src={img}
-                      alt={`Foto ${idx + 1} enviada por ${r.name.trim()}`}
-                      className="h-full w-full object-cover transition-transform duration-200 hover:scale-105"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  </Button>
+                    <img src={img} alt={`Foto ${idx + 1}`} className="h-full w-full object-cover" loading="lazy" decoding="async" />
+                  </div>
                 ))}
                 <span className="text-sm text-muted-foreground">
                   Útil ({r.useful})
@@ -130,22 +115,6 @@ const Reviews = () => {
         <span>5 <Star className="h-3 w-3 inline fill-yellow-400 text-yellow-400" /> (155)</span>
         <span>4 <Star className="h-3 w-3 inline fill-yellow-400 text-yellow-400" /> (22)</span>
       </div>
-
-      <Dialog open={expandedImage !== null} onOpenChange={(open) => !open && setExpandedImage(null)}>
-        <DialogContent className="w-[calc(100%-2rem)] max-w-3xl border-0 bg-background p-2 shadow-2xl sm:p-3 [&>button]:right-3 [&>button]:top-3 [&>button]:z-10 [&>button]:bg-background/90 [&>button]:p-2 [&>button]:opacity-100">
-          <DialogTitle className="sr-only">Foto da avaliação de {expandedImage?.reviewer}</DialogTitle>
-          <DialogDescription className="sr-only">
-            Imagem ampliada do produto enviada por um cliente.
-          </DialogDescription>
-          {expandedImage && (
-            <img
-              src={expandedImage.src}
-              alt={`Foto ampliada da avaliação de ${expandedImage.reviewer}`}
-              className="max-h-[82vh] w-full rounded-md object-contain"
-            />
-          )}
-        </DialogContent>
-      </Dialog>
 
     </div>
   );

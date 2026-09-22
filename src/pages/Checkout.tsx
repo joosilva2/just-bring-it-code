@@ -20,7 +20,7 @@ const VARIANT_PRODUCT_LABELS: Record<VariantValue, string> = {
 interface CheckoutState {
   color: VariantValue;
 }
-const UNIT_PRICE = 8240;
+const UNIT_PRICE = 6420;
 const ORIGINAL_UNIT = 14990;
 const EXPRESS_SHIPPING = 853;
 const formatCPF = (v: string) => {
@@ -482,7 +482,7 @@ const Checkout = () => {
         <div className="flex gap-3">
           <img src={productImage} alt="Armário HomeFlex" className="w-20 h-20 rounded-lg object-contain bg-gray-50" />
           <div className="flex-1 min-w-0">
-            <p className="text-sm text-gray-800 leading-snug line-clamp-2">[PAGUE 1 E LEVE 2] Armário HomeFlex de Aço Multifuncional</p>
+            <p className="text-sm text-gray-800 leading-snug line-clamp-2">[PAGUE 1 LEVE 2] Armário HomeFlex de Aço Multifuncional</p>
             <p className="text-xs text-gray-500 mt-0.5">{colorLabel}</p>
             <div className="flex items-center gap-1 mt-0.5">
               <span className="text-[10px] bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded-full">🔄 Devolução gratuita</span>
@@ -535,7 +535,7 @@ const Checkout = () => {
               {shippingOption === "express" && <div className="w-2 h-2 rounded-full bg-primary" />}
             </div>
             <div className="text-left">
-              <p className="text-sm text-gray-800 font-medium">Envio Express</p>
+              <p className="text-sm text-gray-800 font-medium">TikTok Express</p>
               <p className="text-xs text-gray-500">1 a 3 dias úteis</p>
             </div>
           </div>

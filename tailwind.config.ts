@@ -13,11 +13,6 @@ export default {
       },
     },
     extend: {
-      fontFamily: {
-        sans: ["Figtree", "sans-serif"],
-        heading: ["Outfit", "sans-serif"],
-        price: ["Montserrat", "sans-serif"],
-      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -43,12 +38,6 @@ export default {
         accent: {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
-        },
-        sale: {
-          DEFAULT: "hsl(var(--sale))",
-          foreground: "hsl(var(--sale-foreground))",
-          strong: "hsl(var(--sale-strong))",
-          accent: "hsl(var(--sale-accent))",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",

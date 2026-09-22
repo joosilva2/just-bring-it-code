@@ -1,16 +1,27 @@
-import { ShieldCheck } from "lucide-react";
-import logoCasaPratica from "@/assets/casapratica-logo.png";
+import { X, Share2, ShoppingCart, MoreHorizontal } from "lucide-react";
+import logoGardenLife from "@/assets/logo-garden-life.png";
+import logoTiktokShop from "@/assets/logo-tiktokshop.png";
 
-const ProductHeader = () => {
-  return <header className="w-full bg-background px-4 py-2.5 flex items-center border-b border-border">
-      <div className="flex items-center gap-2.5 min-w-0">
-        <img src={logoCasaPratica} alt="Casa Prática" className="h-9 w-9 rounded-full object-cover" />
-        <div className="min-w-0">
-          <p className="font-heading text-sm font-bold text-foreground leading-none">Casa Prática</p>
-          <p className="mt-1 flex items-center gap-1 text-[11px] text-muted-foreground">
-            <ShieldCheck className="h-3 w-3 text-primary" /> Compra segura
-          </p>
-        </div>
+const ProductHeader = ({ onCloseClick }: { onCloseClick?: () => void }) => {
+  return <header className="w-full bg-white px-3 py-0 flex items-center justify-between">
+      <div className="flex items-center gap-0 relative z-10 flex-shrink-0">
+        <button className="p-1" onClick={onCloseClick}>
+          <X className="h-5 w-5 text-foreground" />
+        </button>
+        
+      </div>
+      <div className="flex items-center gap-3">
+        
+        
+        <button className="p-1">
+          <Share2 className="h-5 w-5 text-foreground" />
+        </button>
+        <button className="p-1">
+          <ShoppingCart className="h-5 w-5 text-foreground" />
+        </button>
+        <button className="p-1">
+          <MoreHorizontal className="h-5 w-5 text-foreground" />
+        </button>
       </div>
     </header>;
 };
