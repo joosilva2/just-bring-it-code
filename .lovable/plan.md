@@ -1,23 +1,7 @@
+## Atualizar o preço do produto para R$ 82,40
 
-
-## Trocar preco do produto de R$ 87,60 para R$ 87,74
-
-Vou atualizar o preco em todos os lugares do projeto:
-
-### Arquivos que serao alterados:
-
-1. **src/components/product/ProductInfo.tsx**
-   - Preco principal: R$ 87,60 → R$ 87,74
-   - Parcela: 6x de R$ 18,57 → 6x de R$ 14,62
-
-2. **src/pages/Checkout.tsx**
-   - Constante UNIT_PRICE: 8760 → 8774
-
-3. **supabase/functions/create-pix-payment/index.ts**
-   - Valor padrao: 8760 → 8774
-
-4. **supabase/functions/payment-webhook/index.ts**
-   - Valor padrao: 8760 → 8774
-
-Sao 4 arquivos no total, cobrindo a pagina do produto, checkout e as funcoes de pagamento no backend.
-
+- Trocar o preço exibido na página do produto e nos avisos de compra.
+- Atualizar o valor usado no checkout e na geração do PIX para 8.240 centavos.
+- Ajustar a parcela exibida para 6x de R$ 13,73.
+- Atualizar mensagens automáticas e valores padrão dos pagamentos.
+- Validar que não restaram referências ao preço antigo de R$ 64,20.
