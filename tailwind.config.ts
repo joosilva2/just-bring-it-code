@@ -16,6 +16,7 @@ export default {
       fontFamily: {
         sans: ["Figtree", "sans-serif"],
         heading: ["Outfit", "sans-serif"],
+        price: ["Montserrat", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
