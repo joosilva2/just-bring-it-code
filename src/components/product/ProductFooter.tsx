@@ -44,7 +44,7 @@ const ProductFooter = () => {
       </div>
 
       <div className="text-center border-t border-border pt-4 space-y-1">
-        <p className="text-xs text-muted-foreground">© 2025 CasaPrática.</p>
+        <p className="text-xs text-muted-foreground">© 2026 CasaPrática.</p>
         <div className="flex justify-center gap-2 text-xs text-primary">
           <Link to="/politica-de-privacidade">Política de privacidade</Link>
           <span className="text-muted-foreground">•</span>

@@ -24,18 +24,18 @@ const ProductInfo = () => {
     <div className="bg-white">
       {/* Flash sale banner */}
       <div className="bg-[#ED7E2D] px-5 py-4">
-        <div className="flex items-start justify-between gap-3 mb-3">
-          <div className="flex items-start gap-5 flex-1">
-            <div className="flex items-start gap-1.5">
-              <Zap className="h-4 w-4 text-yellow-300 fill-yellow-300 mt-0.5 flex-shrink-0" />
-              <span className="font-sans text-[14px] font-semibold text-white uppercase leading-tight tracking-normal">
-                Pague 1 e<br />Leve 2
+        <div className="flex items-center justify-between gap-2 mb-3">
+          <div className="flex items-center gap-3 min-w-0">
+            <div className="flex items-center gap-1 whitespace-nowrap">
+              <Zap className="h-4 w-4 text-yellow-300 fill-yellow-300 flex-shrink-0" />
+              <span className="font-sans text-xs font-semibold text-white uppercase leading-none tracking-normal">
+                Pague 1 e Leve 2
               </span>
             </div>
-            <div className="flex items-start gap-1.5">
-              <Zap className="h-4 w-4 text-yellow-300 fill-yellow-300 mt-0.5 flex-shrink-0" />
-              <span className="font-sans text-[14px] font-semibold text-white uppercase leading-tight tracking-normal">
-                Promoção<br />Relâmpago
+            <div className="hidden min-[375px]:flex items-center gap-1 whitespace-nowrap">
+              <Zap className="h-4 w-4 text-yellow-300 fill-yellow-300 flex-shrink-0" />
+              <span className="font-sans text-xs font-semibold text-white uppercase leading-none tracking-normal">
+                Promoção relâmpago
               </span>
             </div>
           </div>
@@ -54,7 +54,7 @@ const ProductInfo = () => {
           </div>
         </div>
         <div className="flex items-baseline gap-2.5">
-          <span className="font-sans text-[32px] leading-none font-semibold text-white tracking-normal">R$ 82,40</span>
+          <span className="font-price text-[32px] leading-none font-extrabold text-white tracking-normal">R$ 82,40</span>
           <span className="text-base text-white/70 line-through">R$ 149,90</span>
           <span className="bg-[#7A3A12] text-white text-[13px] font-bold px-2 py-0.5 rounded-md">
             -45%
