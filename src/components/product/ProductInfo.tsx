@@ -23,42 +23,41 @@ const ProductInfo = () => {
   return (
     <div className="bg-white">
       {/* Flash sale banner */}
-      <div className="bg-[#ED7E2D] px-5 py-4">
-        <div className="flex flex-col gap-2 mb-3">
-          <div className="flex items-center justify-between gap-3 min-w-0">
-            <div className="flex items-center gap-1 whitespace-nowrap">
-              <Zap className="h-4 w-4 text-yellow-300 fill-yellow-300 flex-shrink-0" />
-              <span className="font-sans text-xs font-semibold text-white uppercase leading-none tracking-normal">
-                Pague 1 e Leve 2
-              </span>
-            </div>
-            <div className="flex items-center gap-1 whitespace-nowrap">
-              <Zap className="h-4 w-4 text-yellow-300 fill-yellow-300 flex-shrink-0" />
-              <span className="font-sans text-xs font-semibold text-white uppercase leading-none tracking-normal">
-                Promoção relâmpago
-              </span>
-            </div>
+      <div className="bg-sale px-4 py-3 text-sale-foreground">
+        <div className="flex items-center justify-center gap-2 whitespace-nowrap text-center">
+          <Zap className="h-5 w-5 flex-shrink-0 fill-sale-accent text-sale-accent" />
+          <span className="font-heading text-lg font-extrabold uppercase leading-tight tracking-normal">
+            Pague 1 e Leve 2
+          </span>
+          <Zap className="h-5 w-5 flex-shrink-0 fill-sale-accent text-sale-accent" />
+        </div>
+
+        <div className="mt-2 flex flex-wrap items-baseline justify-center gap-x-2 gap-y-1 text-center">
+          <span className="font-price text-[34px] font-extrabold leading-none tracking-normal">R$ 82,40</span>
+          <span className="text-sm text-sale-foreground/75 line-through">R$ 149,90</span>
+          <span className="rounded-md bg-sale-strong px-2 py-0.5 text-[13px] font-bold">
+            -45%
+          </span>
+        </div>
+
+        <div className="mt-3 flex items-center justify-between gap-3 border-t border-sale-foreground/25 pt-2">
+          <div className="flex min-w-0 items-center gap-1.5 whitespace-nowrap">
+            <Zap className="h-4 w-4 flex-shrink-0 fill-sale-accent text-sale-accent" />
+            <span className="text-xs font-bold uppercase leading-none">Promoção relâmpago</span>
           </div>
-          <div className="flex items-center gap-1 self-end flex-shrink-0">
-            <span className="bg-[#7A3A12] text-white text-[13px] font-bold px-2 py-1 rounded-md tabular-nums min-w-[28px] text-center">
+          <div className="flex flex-shrink-0 items-center gap-1" aria-label="Tempo restante da promoção">
+            <span className="min-w-[30px] rounded-md bg-sale-strong px-1.5 py-1 text-center text-[13px] font-bold tabular-nums">
               {pad(timeLeft.hours)}
             </span>
-            <span className="text-white text-sm font-bold">:</span>
-            <span className="bg-[#7A3A12] text-white text-[13px] font-bold px-2 py-1 rounded-md tabular-nums min-w-[28px] text-center">
+            <span className="text-sm font-bold">:</span>
+            <span className="min-w-[30px] rounded-md bg-sale-strong px-1.5 py-1 text-center text-[13px] font-bold tabular-nums">
               {pad(timeLeft.minutes)}
             </span>
-            <span className="text-white text-sm font-bold">:</span>
-            <span className="bg-[#7A3A12] text-white text-[13px] font-bold px-2 py-1 rounded-md tabular-nums min-w-[28px] text-center">
+            <span className="text-sm font-bold">:</span>
+            <span className="min-w-[30px] rounded-md bg-sale-strong px-1.5 py-1 text-center text-[13px] font-bold tabular-nums">
               {pad(timeLeft.seconds)}
             </span>
           </div>
-        </div>
-        <div className="flex items-baseline gap-2.5">
-          <span className="font-price text-[32px] leading-none font-extrabold text-white tracking-normal">R$ 82,40</span>
-          <span className="text-base text-white/70 line-through">R$ 149,90</span>
-          <span className="bg-[#7A3A12] text-white text-[13px] font-bold px-2 py-0.5 rounded-md">
-            -45%
-          </span>
         </div>
       </div>
 

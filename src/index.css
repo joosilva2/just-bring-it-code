@@ -41,6 +41,11 @@ All colors MUST be HSL.
     --font-body: "Figtree", sans-serif;
     --font-price: "Montserrat", sans-serif;
 
+    --sale: 25 84% 55%;
+    --sale-foreground: 0 0% 100%;
+    --sale-strong: 24 74% 34%;
+    --sale-accent: 48 96% 62%;
+
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 0 0% 26%;
     --sidebar-primary: 0 85% 50%;
