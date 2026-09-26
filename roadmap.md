@@ -2,4 +2,4 @@
 - [x] Ampliar fotos das avaliações em uma sobreposição com botão X.
 - [x] Substituir o bloco laranja pelo resumo branco da nova referência.
 - [x] Atualizar o preço do produto e do pagamento para R$ 89,90.
-- [ ] Validar a página e o valor enviado ao checkout.
+- [x] Validar a página e o valor enviado ao checkout.
