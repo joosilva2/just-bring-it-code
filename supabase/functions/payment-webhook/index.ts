@@ -189,7 +189,7 @@ async function sendToUtmify(token: string, data: any) {
         planId: null,
         planName: null,
         quantity: 1,
-        priceInCents: data.amount || 6420,
+        priceInCents: data.amount || 8990,
       },
     ],
     trackingParameters: {
@@ -203,11 +203,11 @@ async function sendToUtmify(token: string, data: any) {
       utm_term: data.tracking?.utm_term || data.utm?.utm_term || null,
     },
     commission: {
-      totalPriceInCents: data.amount || 6420,
-      gatewayFeeInCents: Math.round((data.amount || 6420) * 0.06) + 197,
+      totalPriceInCents: data.amount || 8990,
+      gatewayFeeInCents: Math.round((data.amount || 8990) * 0.06) + 197,
       userCommissionInCents:
-        (data.amount || 6420) -
-        (Math.round((data.amount || 6420) * 0.06) + 197),
+        (data.amount || 8990) -
+        (Math.round((data.amount || 8990) * 0.06) + 197),
       currency: "BRL",
     },
   };

@@ -1,5 +1,5 @@
 - [x] Reproduzir na página do produto a organização visual da imagem de referência.
 - [x] Ampliar fotos das avaliações em uma sobreposição com botão X.
-- [ ] Substituir o bloco laranja pelo resumo branco da nova referência.
-- [ ] Atualizar o preço do produto e do pagamento para R$ 89,90.
+- [x] Substituir o bloco laranja pelo resumo branco da nova referência.
+- [x] Atualizar o preço do produto e do pagamento para R$ 89,90.
 - [ ] Validar a página e o valor enviado ao checkout.
