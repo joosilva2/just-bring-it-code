@@ -1,4 +1,4 @@
-import { ShieldCheck, Package, PenLine, ShieldCheck as ShieldIcon, Truck } from "lucide-react";
+import { ShieldCheck, Package, PenLine, ShieldCheck as ShieldIcon, Truck, Ruler } from "lucide-react";
 
 const items = [
   { icon: Package, text: "Pague 1 Leve 2", color: "text-orange-500" },
@@ -38,6 +38,28 @@ const TrustBadges = () => {
           Sua compra é <strong>100% protegida</strong>. Garantimos devolução do valor
           integral caso o produto não corresponda à descrição.
         </p>
+      </div>
+
+      <div className="mt-5 border-t border-border pt-4">
+        <div className="mb-3 flex items-center gap-2">
+          <Ruler className="h-5 w-5 text-foreground" />
+          <h2 className="text-base font-bold text-foreground">Dimensões do produto</h2>
+        </div>
+        <div className="grid grid-cols-3 divide-x divide-border rounded-lg border border-border bg-commerce-surface">
+          <div className="px-2 py-3 text-center">
+            <p className="text-xs text-muted-foreground">Altura</p>
+            <p className="mt-1 text-sm font-bold text-foreground">1,80 m</p>
+            <p className="text-[10px] text-muted-foreground">180 cm</p>
+          </div>
+          <div className="px-2 py-3 text-center">
+            <p className="text-xs text-muted-foreground">Largura</p>
+            <p className="mt-1 text-sm font-bold text-foreground">75 cm</p>
+          </div>
+          <div className="px-2 py-3 text-center">
+            <p className="text-xs text-muted-foreground">Profundidade</p>
+            <p className="mt-1 text-sm font-bold text-foreground">32 cm</p>
+          </div>
+        </div>
       </div>
     </div>
   );
