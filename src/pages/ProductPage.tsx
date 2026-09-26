@@ -319,6 +319,9 @@ const ProductPage = () => {
                   <img src={product.images[0]} alt={v.label} className="w-full h-full object-contain" />
                 </div>
                 <span className="text-sm font-medium text-gray-700">{v.label}</span>
+                <span className="text-xs font-semibold text-green-700">
+                  Estoque: {[18, 24, 13][product.variants.filter((variant) => variant.available).findIndex((variant) => variant.value === v.value)] ?? 16}
+                </span>
               </button>
             ))}
           </div>

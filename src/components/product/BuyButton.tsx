@@ -10,10 +10,10 @@ import flexV1cada from "@/assets/flex-variant-1cada.png";
 
 type VariantValue = "2pretos" | "2brancos" | "1cada";
 
-const variants: { value: VariantValue; label: string; image: string }[] = [
-  { value: "2pretos", label: "2 Pretos", image: flexV2pretos },
-  { value: "2brancos", label: "2 Brancos", image: flexV2brancos },
-  { value: "1cada", label: "1 Preto e 1 Branco", image: flexV1cada },
+const variants: { value: VariantValue; label: string; image: string; stock: number }[] = [
+  { value: "2pretos", label: "2 Pretos", image: flexV2pretos, stock: 18 },
+  { value: "2brancos", label: "2 Brancos", image: flexV2brancos, stock: 24 },
+  { value: "1cada", label: "1 Preto e 1 Branco", image: flexV1cada, stock: 13 },
 ];
 
 const BuyButton = () => {
@@ -74,6 +74,9 @@ const BuyButton = () => {
                 </div>
                 <span className="text-[11px] font-medium text-gray-700 text-center leading-tight">
                   {v.label}
+                </span>
+                <span className="text-[10px] font-semibold text-green-700">
+                  Estoque: {v.stock}
                 </span>
               </button>
             ))}
