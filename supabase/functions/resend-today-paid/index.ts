@@ -88,7 +88,7 @@ async function sendTikTokEvent(order: any, pixelId: string, accessToken: string)
 
 async function sendToUtmify(token: string, order: any) {
   const now = new Date().toISOString().replace('T', ' ').slice(0, 19);
-  const amount = order.amount || 8760;
+  const amount = order.amount || 8990;
   const payload = {
     orderId: order.external_ref,
     platform: 'MesaMaleta',
