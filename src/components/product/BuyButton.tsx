@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { MessageCircle, ShoppingCart, X } from "lucide-react";
+import { MessageCircle, X } from "lucide-react";
 import { trackClick } from "@/lib/tracking";
 import { prefetchCheckout } from "@/lib/prefetchCheckout";
 import ChatWidget from "@/components/product/ChatWidget";
@@ -95,33 +95,17 @@ const BuyButton = () => {
 
       {/* Fixed bottom bar */}
       <div className="fixed bottom-0 left-0 right-0 z-40 bg-white border-t border-gray-200 shadow-[0_-4px_12px_rgba(0,0,0,0.1)]">
-        <div className="flex items-center h-16">
-          <div className="flex items-center">
-            <button onClick={() => setChatOpen(true)} className="flex flex-col items-center justify-center w-14 h-14 text-gray-500 active:text-red-500">
-              <MessageCircle className="h-5 w-5" />
-              <span className="text-[10px] mt-0.5">Chat</span>
-            </button>
-          </div>
-
-          <div className="flex flex-1 items-center gap-2 px-2">
+        <div className="flex h-16 items-center gap-3 px-3">
+          <button onClick={() => setChatOpen(true)} className="flex h-12 w-20 flex-shrink-0 flex-col items-center justify-center text-gray-500 active:text-red-500">
+            <MessageCircle className="h-5 w-5" />
+            <span className="mt-0.5 text-[10px]">Chat</span>
+          </button>
+          <div className="flex flex-1 items-center">
             <button
               onClick={handleBuyClick}
-              aria-label="Carrinho"
-              className="flex items-center justify-center w-9 h-9 text-destructive flex-shrink-0"
+              className="flex h-12 w-full items-center justify-center rounded-md bg-destructive text-sm font-bold uppercase text-white transition-colors active:bg-red-700"
             >
-              <ShoppingCart className="h-6 w-6" />
-            </button>
-            <button
-              onClick={handleBuyClick}
-              className="flex-1 flex items-center justify-center rounded-md border border-destructive py-2.5 text-xs font-bold text-destructive leading-tight text-center transition-colors active:bg-red-50"
-            >
-              Adicionar ao<br />carrinho
-            </button>
-            <button
-              onClick={handleBuyClick}
-              className="flex-1 flex items-center justify-center rounded-md bg-destructive py-2.5 text-xs font-bold text-white uppercase tracking-wide leading-tight text-center transition-colors active:bg-red-700"
-            >
-              COMPRAR<br />AGORA
+              COMPRAR AGORA
             </button>
           </div>
         </div>
