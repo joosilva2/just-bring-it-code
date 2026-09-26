@@ -20,7 +20,7 @@ const VARIANT_PRODUCT_LABELS: Record<VariantValue, string> = {
 interface CheckoutState {
   color: VariantValue;
 }
-const UNIT_PRICE = 6420;
+const UNIT_PRICE = 8990;
 const ORIGINAL_UNIT = 14990;
 const EXPRESS_SHIPPING = 853;
 const formatCPF = (v: string) => {
