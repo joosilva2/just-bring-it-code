@@ -535,7 +535,7 @@ const Checkout = () => {
               {shippingOption === "express" && <div className="w-2 h-2 rounded-full bg-primary" />}
             </div>
             <div className="text-left">
-              <p className="text-sm text-gray-800 font-medium">TikTok Express</p>
+              <p className="text-sm text-gray-800 font-medium">Envio Express</p>
               <p className="text-xs text-gray-500">1 a 3 dias úteis</p>
             </div>
           </div>
