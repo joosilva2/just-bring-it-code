@@ -48,12 +48,11 @@ const TrustBadges = () => {
         <div className="grid grid-cols-3 divide-x divide-border rounded-lg border border-border bg-commerce-surface">
           <div className="px-2 py-3 text-center">
             <p className="text-xs text-muted-foreground">Altura</p>
-            <p className="mt-1 text-sm font-bold text-foreground">1,80 m</p>
-            <p className="text-[10px] text-muted-foreground">180 cm</p>
+            <p className="mt-1 text-sm font-bold text-foreground">145 cm</p>
           </div>
           <div className="px-2 py-3 text-center">
             <p className="text-xs text-muted-foreground">Largura</p>
-            <p className="mt-1 text-sm font-bold text-foreground">75 cm</p>
+            <p className="mt-1 text-sm font-bold text-foreground">80 cm</p>
           </div>
           <div className="px-2 py-3 text-center">
             <p className="text-xs text-muted-foreground">Profundidade</p>
