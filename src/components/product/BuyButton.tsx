@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Home, MessageCircle, ShoppingCart, X } from "lucide-react";
+import { MessageCircle, ShoppingCart, X } from "lucide-react";
 import { trackClick } from "@/lib/tracking";
 import { prefetchCheckout } from "@/lib/prefetchCheckout";
 import ChatWidget from "@/components/product/ChatWidget";
@@ -94,10 +94,6 @@ const BuyButton = () => {
       <div className="fixed bottom-0 left-0 right-0 z-40 bg-white border-t border-gray-200 shadow-[0_-4px_12px_rgba(0,0,0,0.1)]">
         <div className="flex items-center h-16">
           <div className="flex items-center">
-            <button className="flex flex-col items-center justify-center w-14 h-14 text-gray-500">
-              <Home className="h-5 w-5" />
-              <span className="text-[10px] mt-0.5">Loja</span>
-            </button>
             <button onClick={() => setChatOpen(true)} className="flex flex-col items-center justify-center w-14 h-14 text-gray-500 active:text-red-500">
               <MessageCircle className="h-5 w-5" />
               <span className="text-[10px] mt-0.5">Chat</span>
