@@ -8,7 +8,7 @@ type Msg = { role: "user" | "assistant"; content: string };
 
 const INITIAL: Msg = {
   role: "assistant",
-  content: "Oi! 😍 Sou a Sofia, consultora da MesaLar. Posso te ajudar com qualquer dúvida sobre o Armário HomeFlex! Em que posso ajudar?",
+  content: "Oi! 😍 Sou a Sofia, consultora da Casa Prática. Posso te ajudar com qualquer dúvida sobre o Armário HomeFlex! Em que posso ajudar?",
 };
 
 interface ChatWidgetProps {
@@ -106,7 +106,7 @@ const ChatWidget = ({ open, onClose }: ChatWidgetProps) => {
           <div className="flex items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-lg font-bold text-red-600">S</div>
             <div>
-              <p className="text-sm font-bold leading-tight">Sofia • MesaLar</p>
+              <p className="text-sm font-bold leading-tight">Sofia • Casa Prática</p>
               <p className="text-[11px] opacity-90 flex items-center gap-1">
                 <span className="h-2 w-2 rounded-full bg-green-400 inline-block" />
                 Online agora
