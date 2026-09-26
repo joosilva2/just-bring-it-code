@@ -47,6 +47,16 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        commerce: {
+          surface: "hsl(var(--commerce-surface))",
+          canvas: "hsl(var(--commerce-canvas))",
+          promo: "hsl(var(--commerce-promo))",
+          "promo-strong": "hsl(var(--commerce-promo-strong))",
+          success: "hsl(var(--commerce-success))",
+          "success-soft": "hsl(var(--commerce-success-soft))",
+          star: "hsl(var(--commerce-star))",
+          overlay: "hsl(var(--commerce-overlay))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

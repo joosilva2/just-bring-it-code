@@ -1,4 +1,6 @@
-import { Star, Image as ImageIcon } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Star, Image as ImageIcon, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import reviewFlex1 from "@/assets/review-flex-1.png";
 import reviewFlex2 from "@/assets/review-flex-2.png";
 import reviewFlex3 from "@/assets/review-flex-3.png";
@@ -69,8 +71,24 @@ const Stars = ({ count }: { count: number }) => (
 );
 
 const Reviews = () => {
+  const [expandedImage, setExpandedImage] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!expandedImage) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setExpandedImage(null);
+    };
+    window.addEventListener("keydown", closeOnEscape);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", closeOnEscape);
+    };
+  }, [expandedImage]);
+
   return (
-    <div className="px-4 py-5 bg-white">
+    <div className="px-4 py-5 bg-commerce-surface sm:px-6">
       <h2 className="text-base font-semibold text-foreground mb-2">
         Avaliações dos clientes (207)
       </h2>
@@ -92,12 +110,15 @@ const Reviews = () => {
             {r.images && r.images.length > 0 && (
               <div className="flex items-center gap-3 mt-2.5">
                 {r.images.map((img, idx) => (
-                  <div
+                  <button
                     key={idx}
-                    className="h-16 w-16 rounded-lg overflow-hidden border border-border flex-shrink-0"
+                    type="button"
+                    onClick={() => setExpandedImage(img)}
+                    className="h-16 w-16 overflow-hidden rounded-md border border-border bg-commerce-surface flex-shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                    aria-label={`Ampliar foto da avaliação de ${r.name}`}
                   >
                     <img src={img} alt={`Foto ${idx + 1}`} className="h-full w-full object-cover" loading="lazy" decoding="async" />
-                  </div>
+                  </button>
                 ))}
                 <span className="text-sm text-muted-foreground">
                   Útil ({r.useful})
@@ -115,6 +136,33 @@ const Reviews = () => {
         <span>5 <Star className="h-3 w-3 inline fill-yellow-400 text-yellow-400" /> (155)</span>
         <span>4 <Star className="h-3 w-3 inline fill-yellow-400 text-yellow-400" /> (22)</span>
       </div>
+
+      {expandedImage && (
+        <div
+          className="fixed inset-0 z-[70] flex items-center justify-center bg-commerce-overlay/90 p-4 sm:p-8"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Foto ampliada da avaliação"
+          onClick={() => setExpandedImage(null)}
+        >
+          <Button
+            type="button"
+            variant="secondary"
+            size="icon"
+            className="absolute right-4 top-4 z-10 rounded-full shadow-lg sm:right-8 sm:top-8"
+            onClick={() => setExpandedImage(null)}
+            aria-label="Fechar foto"
+          >
+            <X className="h-5 w-5" />
+          </Button>
+          <img
+            src={expandedImage}
+            alt="Foto ampliada enviada por cliente"
+            className="max-h-[88vh] max-w-full rounded-md object-contain shadow-2xl"
+            onClick={(event) => event.stopPropagation()}
+          />
+        </div>
+      )}
 
     </div>
   );

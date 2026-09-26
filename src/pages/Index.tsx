@@ -38,18 +38,31 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-100 max-w-md mx-auto">
-      <ProductHeader />
-      <ProductGallery />
-      <ProductInfo />
-      <ShippingInfo />
-      <div className="h-2 bg-gray-100" />
-      <TrustBadges />
-      <div className="h-2 bg-gray-100" />
-      <SizeSelector />
-      <QuantitySelector />
-      <div className="h-2 bg-gray-100" />
-      <BelowFold />
+    <div className="min-h-screen bg-commerce-canvas pb-16">
+      <div className="mx-auto w-full max-w-6xl bg-commerce-surface shadow-sm lg:my-6 lg:overflow-hidden lg:rounded-md">
+        <ProductHeader />
+        <main>
+          <section className="grid items-start lg:grid-cols-[minmax(0,1.08fr)_minmax(360px,0.92fr)] lg:border-t lg:border-border">
+            <div className="lg:sticky lg:top-0 lg:border-r lg:border-border">
+              <ProductGallery />
+            </div>
+            <div>
+              <ProductInfo />
+              <ShippingInfo />
+              <div className="h-2 bg-commerce-canvas" />
+              <TrustBadges />
+              <div className="h-2 bg-commerce-canvas" />
+              <SizeSelector />
+              <QuantitySelector />
+            </div>
+          </section>
+
+          <div className="h-2 bg-commerce-canvas" />
+          <div className="mx-auto w-full max-w-3xl">
+            <BelowFold />
+          </div>
+        </main>
+      </div>
       <BuyButton />
       <Suspense fallback={null}>
         <ExitIntentPopup />
