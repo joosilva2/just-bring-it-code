@@ -1,2 +1,2 @@
-- [ ] Reproduzir na página do produto a organização visual da imagem de referência.
-- [ ] Ampliar fotos das avaliações em uma sobreposição com botão X.
+- [x] Reproduzir na página do produto a organização visual da imagem de referência.
+- [x] Ampliar fotos das avaliações em uma sobreposição com botão X.

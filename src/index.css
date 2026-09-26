@@ -46,6 +46,15 @@ All colors MUST be HSL.
     --sidebar-accent-foreground: 0 0% 10%;
     --sidebar-border: 0 0% 91%;
     --sidebar-ring: 0 85% 50%;
+
+    --commerce-surface: 0 0% 100%;
+    --commerce-canvas: 40 20% 97%;
+    --commerce-promo: 25 88% 53%;
+    --commerce-promo-strong: 24 73% 36%;
+    --commerce-success: 142 71% 32%;
+    --commerce-success-soft: 138 76% 97%;
+    --commerce-star: 45 93% 47%;
+    --commerce-overlay: 0 0% 0%;
   }
 
   .dark {
@@ -92,12 +101,17 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
-    html, body, #root {
+  html, body, #root {
     @apply bg-background text-foreground;
     margin: 0;
     min-height: 100%;
     width: 100%;
     overflow-x: hidden;
     max-width: 100vw;
+  }
+
+  body {
+    font-family: "Montserrat Variable", sans-serif;
+    letter-spacing: 0;
   }
 }
