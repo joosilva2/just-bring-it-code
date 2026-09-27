@@ -20,7 +20,7 @@ const VARIANT_PRODUCT_LABELS: Record<VariantValue, string> = {
 interface CheckoutState {
   color: VariantValue;
 }
-const UNIT_PRICE = 8990;
+const UNIT_PRICE = 6420;
 const ORIGINAL_UNIT = 14990;
 const EXPRESS_SHIPPING = 853;
 const formatCPF = (v: string) => {
@@ -535,7 +535,7 @@ const Checkout = () => {
               {shippingOption === "express" && <div className="w-2 h-2 rounded-full bg-primary" />}
             </div>
             <div className="text-left">
-              <p className="text-sm text-gray-800 font-medium">Envio Express</p>
+              <p className="text-sm text-gray-800 font-medium">TikTok Express</p>
               <p className="text-xs text-gray-500">1 a 3 dias úteis</p>
             </div>
           </div>

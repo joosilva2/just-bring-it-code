@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { MessageCircle, X } from "lucide-react";
+import { Home, MessageCircle, ShoppingCart, X } from "lucide-react";
 import { trackClick } from "@/lib/tracking";
 import { prefetchCheckout } from "@/lib/prefetchCheckout";
 import ChatWidget from "@/components/product/ChatWidget";
@@ -10,10 +10,10 @@ import flexV1cada from "@/assets/flex-variant-1cada.png";
 
 type VariantValue = "2pretos" | "2brancos" | "1cada";
 
-const variants: { value: VariantValue; label: string; image: string; stock: number }[] = [
-  { value: "2pretos", label: "2 Pretos", image: flexV2pretos, stock: 18 },
-  { value: "2brancos", label: "2 Brancos", image: flexV2brancos, stock: 24 },
-  { value: "1cada", label: "1 Preto e 1 Branco", image: flexV1cada, stock: 13 },
+const variants: { value: VariantValue; label: string; image: string }[] = [
+  { value: "2pretos", label: "2 Pretos", image: flexV2pretos },
+  { value: "2brancos", label: "2 Brancos", image: flexV2brancos },
+  { value: "1cada", label: "1 Preto e 1 Branco", image: flexV1cada },
 ];
 
 const BuyButton = () => {
@@ -75,9 +75,6 @@ const BuyButton = () => {
                 <span className="text-[11px] font-medium text-gray-700 text-center leading-tight">
                   {v.label}
                 </span>
-                <span className="text-[10px] font-semibold text-green-700">
-                  Estoque: {v.stock}
-                </span>
               </button>
             ))}
           </div>
@@ -95,17 +92,37 @@ const BuyButton = () => {
 
       {/* Fixed bottom bar */}
       <div className="fixed bottom-0 left-0 right-0 z-40 bg-white border-t border-gray-200 shadow-[0_-4px_12px_rgba(0,0,0,0.1)]">
-        <div className="flex h-16 items-center gap-3 px-3">
-          <button onClick={() => setChatOpen(true)} className="flex h-12 w-20 flex-shrink-0 flex-col items-center justify-center text-gray-500 active:text-red-500">
-            <MessageCircle className="h-5 w-5" />
-            <span className="mt-0.5 text-[10px]">Chat</span>
-          </button>
-          <div className="flex flex-1 items-center">
+        <div className="flex items-center h-16">
+          <div className="flex items-center">
+            <button className="flex flex-col items-center justify-center w-14 h-14 text-gray-500">
+              <Home className="h-5 w-5" />
+              <span className="text-[10px] mt-0.5">Loja</span>
+            </button>
+            <button onClick={() => setChatOpen(true)} className="flex flex-col items-center justify-center w-14 h-14 text-gray-500 active:text-red-500">
+              <MessageCircle className="h-5 w-5" />
+              <span className="text-[10px] mt-0.5">Chat</span>
+            </button>
+          </div>
+
+          <div className="flex flex-1 items-center gap-2 px-2">
             <button
               onClick={handleBuyClick}
-              className="flex h-12 w-full items-center justify-center rounded-md bg-destructive text-sm font-bold uppercase text-white transition-colors active:bg-red-700"
+              aria-label="Carrinho"
+              className="flex items-center justify-center w-9 h-9 text-destructive flex-shrink-0"
             >
-              COMPRAR AGORA
+              <ShoppingCart className="h-6 w-6" />
+            </button>
+            <button
+              onClick={handleBuyClick}
+              className="flex-1 flex items-center justify-center rounded-md border border-destructive py-2.5 text-xs font-bold text-destructive leading-tight text-center transition-colors active:bg-red-50"
+            >
+              Adicionar ao<br />carrinho
+            </button>
+            <button
+              onClick={handleBuyClick}
+              className="flex-1 flex items-center justify-center rounded-md bg-destructive py-2.5 text-xs font-bold text-white uppercase tracking-wide leading-tight text-center transition-colors active:bg-red-700"
+            >
+              COMPRAR<br />AGORA
             </button>
           </div>
         </div>
