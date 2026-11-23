@@ -38,18 +38,22 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-100 max-w-md mx-auto">
+    <div className="storefront min-h-screen">
       <ProductHeader />
-      <ProductGallery />
-      <ProductInfo />
-      <ShippingInfo />
-      <div className="h-2 bg-gray-100" />
-      <TrustBadges />
-      <div className="h-2 bg-gray-100" />
-      <SizeSelector />
-      <QuantitySelector />
-      <div className="h-2 bg-gray-100" />
-      <BelowFold />
+      <main className="storefront-main">
+        <section className="storefront-product">
+          <ProductGallery />
+          <div className="storefront-purchase">
+            <ProductInfo />
+            <ShippingInfo />
+            <SizeSelector />
+            <QuantitySelector />
+            <BuyButton inline />
+            <TrustBadges />
+          </div>
+        </section>
+        <div className="storefront-details"><BelowFold /></div>
+      </main>
       <BuyButton />
       <Suspense fallback={null}>
         <ExitIntentPopup />

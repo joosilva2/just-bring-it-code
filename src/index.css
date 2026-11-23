@@ -87,6 +87,46 @@ All colors MUST be HSL.
   }
 }
 
+/* Storefront presentation is scoped so administrative pages keep their theme. */
+.storefront {
+  --background: 0 0% 100%;
+  --foreground: 215 28% 17%;
+  --primary: 142 72% 29%;
+  --primary-foreground: 0 0% 100%;
+  --accent: 138 76% 97%;
+  --accent-foreground: 142 72% 29%;
+  --ring: 142 72% 29%;
+  --store-page: 60 5% 95%;
+  --rating: 43 96% 56%;
+  background: hsl(var(--store-page));
+  color: hsl(var(--foreground));
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  letter-spacing: 0;
+  padding-bottom: 64px;
+}
+.storefront-main { max-width: 1040px; margin: 0 auto; padding: 24px 32px 0; }
+.storefront-product { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); background: hsl(var(--background)); align-items: start; }
+.storefront-purchase { min-width: 0; }
+.storefront-details { max-width: 740px; margin: 32px auto 0; }
+.storefront-details > div { border-radius: 0; }
+.storefront header { max-width: 1040px; margin: auto; min-height: 32px; background: hsl(var(--background)); }
+.storefront .reviews-section { padding: 28px 24px; }
+.review-star { fill: hsl(43 96% 56%); color: hsl(43 96% 56%); }
+.review-photo-dialog { --primary: 142 72% 29%; --accent: 138 76% 97%; }
+.review-photo-dialog > button { width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; }
+.storefront-details img { border-radius: 0; }
+@media (max-width: 767px) {
+  .storefront-main { padding: 0; max-width: 480px; }
+  .storefront-product { grid-template-columns: minmax(0, 1fr); }
+  .storefront-details { margin-top: 16px; }
+  .storefront header { max-width: 480px; }
+  .storefront .reviews-section { padding: 24px 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .storefront *, .review-photo-dialog { animation: none !important; transition: none !important; }
+}
+
 @layer base {
   * {
     @apply border-border;

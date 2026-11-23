@@ -7,6 +7,7 @@ import ChatWidget from "@/components/product/ChatWidget";
 import flexV2pretos from "@/assets/flex-variant-2pretos.png";
 import flexV2brancos from "@/assets/flex-variant-2brancos.png";
 import flexV1cada from "@/assets/flex-variant-1cada.png";
+import { Button } from "@/components/ui/button";
 
 type VariantValue = "2pretos" | "2brancos" | "1cada";
 
@@ -16,7 +17,7 @@ const variants: { value: VariantValue; label: string; image: string }[] = [
   { value: "1cada", label: "1 Preto e 1 Branco", image: flexV1cada },
 ];
 
-const BuyButton = () => {
+const BuyButton = ({ inline = false }: { inline?: boolean }) => {
   const navigate = useNavigate();
   const [showColors, setShowColors] = useState(false);
   const [selectedVariant, setSelectedVariant] = useState<VariantValue | null>(null);
@@ -90,8 +91,12 @@ const BuyButton = () => {
         </div>
       )}
 
-      {/* Fixed bottom bar */}
-      <div className="fixed bottom-0 left-0 right-0 z-40 bg-white border-t border-gray-200 shadow-[0_-4px_12px_rgba(0,0,0,0.1)]">
+      {inline ? (
+        <div className="hidden md:block px-4 py-3">
+          <Button onClick={handleBuyClick} className="w-full rounded h-11 gap-2 text-sm font-semibold"><ShoppingCart className="h-4 w-4" />Comprar agora</Button>
+        </div>
+      ) : (
+      <div className="storefront-buybar fixed bottom-0 left-0 right-0 z-40 bg-background border-t border-border md:hidden">
         <div className="flex items-center h-16">
           <div className="flex items-center">
             <button className="flex flex-col items-center justify-center w-14 h-14 text-gray-500">
@@ -114,19 +119,20 @@ const BuyButton = () => {
             </button>
             <button
               onClick={handleBuyClick}
-              className="flex-1 flex items-center justify-center rounded-md border border-destructive py-2.5 text-xs font-bold text-destructive leading-tight text-center transition-colors active:bg-red-50"
+              className="flex-1 flex items-center justify-center rounded-md border border-primary py-2.5 text-xs font-bold text-primary leading-tight text-center transition-colors active:bg-accent"
             >
               Adicionar ao<br />carrinho
             </button>
             <button
               onClick={handleBuyClick}
-              className="flex-1 flex items-center justify-center rounded-md bg-destructive py-2.5 text-xs font-bold text-white uppercase tracking-wide leading-tight text-center transition-colors active:bg-red-700"
+              className="flex-1 flex items-center justify-center rounded-md bg-primary py-2.5 text-xs font-bold text-primary-foreground uppercase leading-tight text-center transition-colors active:bg-primary/90"
             >
               COMPRAR<br />AGORA
             </button>
           </div>
         </div>
       </div>
+      )}
     </>
   );
 };
